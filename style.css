@@ -99,7 +99,8 @@ p {
   transition: 0.3s;
 }
 
-.nav-list li:hover .tooltip {
+.nav-list li:hover .tooltip,
+a:hover .tooltip {
   visibility: visible;
   opacity: 1;
 }
