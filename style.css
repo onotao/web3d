@@ -56,12 +56,25 @@ p {
   position: fixed;
   bottom: 2rem;
   left: 38%;
-  transform: translateX(-50x);
+  transform: translateX(-38%);
   width: 40rem;
   padding: 2rem 0;
   background: var(--nav-bg-color);
   border-radius: 5rem;
   z-index: 100;
+  animation: animate-nav 1s ease-in-out backwards;
+  animation-delay: 4s;
+}
+
+@keyframes animate-nav {
+  0% {
+    visibility: hidden;
+    opacity: 0;
+  }
+  100% {
+    visibility: visible;
+    opacity: 1;
+  }
 }
 
 .nav .nav-list {
@@ -122,6 +135,16 @@ a:hover .tooltip,
   /* Pertukaran halaman 3d */
   transform: rotateY(0deg);
   transition: 2s;
+  animation: animate-cube 3s ease-in-out backwards;
+}
+
+@keyframes animate-cube {
+  0% {
+    transform: scale(0) rotateY(-360deg);
+  }
+  100% {
+    transform: scale(1) rotateY(0deg);
+  }
 }
 
 .section {
@@ -600,4 +623,116 @@ a:hover .tooltip,
 
 .contact-form .contact-btn .btn {
   cursor: pointer;
+}
+
+/* Break Point */
+@media screen and (max-width: 1200px) {
+  html {
+    font-size: 55%;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .section {
+    padding: 0 4%;
+  }
+
+  .resume,
+  .portfolio {
+    padding-top: 1.5rem;
+    padding-bottom: 27rem;
+  }
+
+  .contact {
+    padding-top: 1.5rem;
+    padding-bottom: 18rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 50%;
+  }
+  .nav {
+    bottom: 0;
+  }
+  .home,
+  .about {
+    flex-direction: column-reverse;
+    justify-content: center;
+    gap: 2rem;
+    padding-bottom: 6rem;
+  }
+
+  .about {
+    flex-direction: column;
+  }
+
+  .img-box {
+    width: 35rem;
+    height: 35rem;
+  }
+
+  .resume,
+  .portfolio {
+    padding-bottom: 16rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .resume,
+  .portfolio {
+    padding-top: 1rem;
+    padding-bottom: 22rem;
+  }
+
+  .tab-box {
+    margin-top: 0;
+  }
+  .contact {
+    padding-top: 1rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .nav {
+    width: 100%;
+    border-radius: 0;
+  }
+
+  .home-info,
+  .about-info {
+    text-align: center;
+  }
+
+  .home-info h1 {
+    font-size: 5rem;
+  }
+
+  .home-info .btn-sci {
+    flex-direction: column-reverse;
+  }
+
+  .home-info .btn-sci .sci {
+    margin-left: 0;
+    margin-bottom: 2rem;
+  }
+
+  .img-box {
+    width: 30rem;
+    height: 30rem;
+  }
+  .about-info .title {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .img-box {
+    width: 25rem;
+    height: 25rem;
+  }
+  .tab-list h3 {
+    font-size: 2.3rem;
+  }
 }
