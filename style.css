@@ -55,8 +55,8 @@ p {
 .nav {
   position: fixed;
   bottom: 2rem;
-  left: 38%;
-  transform: translateX(-38%);
+  left: 50%;
+  transform: translateX(-50%);
   width: 40rem;
   padding: 2rem 0;
   background: var(--nav-bg-color);
